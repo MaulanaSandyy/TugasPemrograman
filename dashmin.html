@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="asset/css/styledashmin.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="title">Admin Dashboard</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="title">Dashboard</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="chatbubble-outline"></ion-icon>
+                        </span>
+                        <span class="title">Pesan</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="help-outline"></ion-icon>
+                        </span>
+                        <span class="title">Bantuan</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="settings-outline"></ion-icon>
+                        </span>
+                        <span class="title">Setting</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="lock-closed-outline"></ion-icon>
+                        </span>
+                        <span class="title">Password</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="log-out-outline"></ion-icon>
+                        </span>
+                        <span class="title">Keluar</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+
+                <div class="search">
+                    <label>
+                        <input type="text" placeholder="Cari Disini">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </label>
+                </div>
+
+                <div class="user">
+                    <img src="asset/gambar/image.jpg" alt="">
+                </div>
+            </div>
+
+            <div class="cardBox">
+                <div class="card">
+                    <div>
+                        <div class="numbers">504</div>
+                        <div class="cardName">Total Postingan</div>
+                    </div>
+
+                    <div class="iconBx">
+                        <ion-icon name="newspaper-outline"></ion-icon>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <div class="numbers">80</div>
+                        <div class="cardName">Total Pengunjung</div>
+                    </div>
+
+                    <div class="iconBx">
+                        <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <div class="numbers">284</div>
+                        <div class="cardName">Komentar</div>
+                    </div>
+
+                    <div class="iconBx">
+                        <ion-icon name="chatbubbles-outline"></ion-icon>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grafik ditambahkan di bawah ini -->
+            <div style="width: 60%; margin: auto;">
+                <canvas id="myChart" width="400" height="200"></canvas>
+            </div>
+            <!-- Akhir dari bagian grafik -->
+
+            <!-- Tombol Upload, Edit, dan Hapus Blog -->
+            <div style="text-align: center; margin-top: 20px;">
+                <a href=""><button style="background-color: green; color: white; padding: 10px 20px; border: none; border-radius: 5px; margin-right: 10px; cursor: pointer;">Upload Blog</button></a>
+                <a href=""><button style="background-color: blue; color: white; padding: 10px 20px; border: none; border-radius: 5px; margin-right: 10px;cursor: pointer;">Edit Blog</button></a>
+                <a href=""><button style="background-color: red; color: white; padding: 10px 20px; border: none; border-radius: 5px;cursor: pointer;">Hapus Blog</button></a>
+            </div>
+
+
+            <div class="details">
+                <div class="recentOrders">
+                    <div class="cardHeader">
+                        <h2>Postingan</h2>
+                        <a href="#" class="btn">Lihat Semua</a>
+                    </div>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>Penulis</td>
+                                <td>Judul</td>
+                                <td>Tentang</td>
+                                <td>Status</td>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Maulana</td>
+                                <td>Ikan yang telah mati</td>
+                                <td>cerita</td>
+                                <td><span class="status delivered">Terposting</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Sandy</td>
+                                <td>Perjalanan Tanpa Tujuan</td>
+                                <td>novel</td>
+                                <td><span class="status pending">Dalam Proses</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Alkian</td>
+                                <td>Langit yang Berubah</td>
+                                <td>puisi</td>
+                                <td><span class="status return">Gagal</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Pelangi</td>
+                                <td>Suara Hati</td>
+                                <td>cerita pendek</td>
+                                <td><span class="status pending">Dalam Proses</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Cahya</td>
+                                <td>Kisah di Ujung Malam</td>
+                                <td>drama</td>
+                                <td><span class="status inProgress">Sedang memosting</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Putri</td>
+                                <td>Melodi Senja</td>
+                                <td>musik</td>
+                                <td><span class="status return">Gagal</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Skyzlyy</td>
+                                <td>Cinta di Tengah Hujan</td>
+                                <td>romantis</td>
+                                <td><span class="status delivered">Terposting</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Jabaru</td>
+                                <td>Warna Dalam Hidup</td>
+                                <td>motivasi</td>
+                                <td><span class="status inProgress">Sedang memosting</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="recentCustomers">
+                    <div class="cardHeader">
+                        <h2>Komentar</h2>
+                    </div>
+
+                    <table>
+                        <tr>
+                            <td width="60px">
+                                <div class="imgBx"><img src="asset/gambar/customer02.jpg" alt=""></div>
+                            </td>
+                            <td>
+                                <h4>Rina <br> <span>Bagus sekali, sangat menginspirasi</span></h4>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td width="60px">
+                                <div class="imgBx"><img src="asset/gambar/customer01.jpg" alt=""></div>
+                            </td>
+                            <td>
+                                <h4>Budi <br> <span>Kisah yang menarik, saya suka gaya penulisannya</span></h4>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td width="60px">
+                                <div class="imgBx"><img src="asset/gambar/customer02.jpg" alt=""></div>
+                            </td>
+                            <td>
+                                <h4>Sari <br> <span>Saya tidak bisa berhenti membaca, sangat seru</span></h4>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td width="60px">
+                                <div class="imgBx"><img src="asset/gambar/customer01.jpg" alt=""></div>
+                            </td>
+                            <td>
+                                <h4>Andi <br> <span>Ini membuat saya merenung, terima kasih</span></h4>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td width="60px">
+                                <div class="imgBx"><img src="asset/gambar/customer02.jpg" alt=""></div>
+                            </td>
+                            <td>
+                                <h4>Fajar <br> <span>Bagaimana jika ada sekuel? Pasti menarik</span></h4>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td width="60px">
+                                <div class="imgBx"><img src="asset/gambar/customer01.jpg" alt=""></div>
+                            </td>
+                            <td>
+                                <h4>Dewi <br> <span>Pesan yang disampaikan sangat kuat</span></h4>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td width="60px">
+                                <div class="imgBx"><img src="asset/gambar/customer01.jpg" alt=""></div>
+                            </td>
+                            <td>
+                                <h4>Lisa <br> <span>Menarik, tapi bisa lebih mendalam lagi</span></h4>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td width="60px">
+                                <div class="imgBx"><img src="asset/gambar/customer02.jpg" alt=""></div>
+                            </td>
+                            <td>
+                                <h4>Danang <br> <span>Saya suka bagian akhirnya, sangat menyentuh</span></h4>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- =========== Scripts =========  -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar', // tipe grafik
+            data: {
+                labels: ['Total Postingan', 'Total Pengunjung', 'Komentar'], // label untuk kategori
+                datasets: [{
+                    label: 'Jumlah Data',
+                    data: [504, 80, 284], // data
+                    backgroundColor: [
+                        'rgba(54, 162, 235, 0.2)', // warna Total Postingan
+                        'rgba(255, 206, 86, 0.2)', // warna Total Pengunjung
+                        'rgba(255, 99, 132, 0.2)', // warna Komentar
+                    ],
+                    borderColor: [
+                        'rgba(54, 162, 235, 1)', // border Total Postingan
+                        'rgba(255, 206, 86, 1)', // border Total Pengunjung
+                        'rgba(255, 99, 132, 1)', // border Komentar
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true // Grafik mulai dari 0
+                    }
+                }
+            }
+        });
+    </script>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
