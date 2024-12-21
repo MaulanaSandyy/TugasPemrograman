@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan Penjualan</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .chart-container {
+            width: 80%;
+            margin: auto;
+        }
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Laporan Penjualan</h1>
+    <div class="chart-container">
+        <canvas id="salesChart"></canvas>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Bulan</th>
+                <th>2022</th>
+                <th>2023</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Januari</td><td>4017</td><td>2416</td></tr>
+            <tr><td>Februari</td><td>6135</td><td>4136</td></tr>
+            <tr><td>Maret</td><td>7091</td><td>7935</td></tr>
+            <tr><td>April</td><td>5841</td><td>8004</td></tr>
+            <tr><td>Mei</td><td>5036</td><td>9505</td></tr>
+            <tr><td>Juni</td><td>4547</td><td>5026</td></tr>
+            <tr><td>Juli</td><td>3467</td><td>6108</td></tr>
+            <tr><td>Agustus</td><td>3970</td><td>6343</td></tr>
+            <tr><td>September</td><td>6313</td><td>9404</td></tr>
+            <tr><td>Oktober</td><td>3595</td><td>9280</td></tr>
+            <tr><td>November</td><td>9207</td><td>9287</td></tr>
+            <tr><td>Desember</td><td>5945</td><td>8689</td></tr>
+        </tbody>
+    </table>
+
+    <script>
+        const ctx = document.getElementById('salesChart').getContext('2d');
+        const salesChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'],
+                datasets: [
+                    {
+                        label: '2022',
+                        data: [4017, 6135, 7091, 5841, 5036, 4547, 3467, 3970, 6313, 3595, 9207, 5945],
+                        backgroundColor: 'rgba(54, 162, 235, 0.7)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 1
+                    },
+                    {
+                        label: '2023',
+                        data: [2416, 4136, 7935, 8004, 9505, 5026, 6108, 6343, 9404, 9280, 9287, 8689],
+                        backgroundColor: 'rgba(255, 99, 132, 0.7)',
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        borderWidth: 1
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top'
+                    },
+                    title: {
+                        display: true,
+                        text: 'Laporan Penjualan'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
