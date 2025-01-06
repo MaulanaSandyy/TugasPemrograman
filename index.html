@@ -9,6 +9,27 @@
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"rel="stylesheet"/>
   </head>
   <body>
+    <style>
+      .filter-buttons {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      
+      .filter-buttons button {
+        margin: 5px;
+        padding: 10px 20px;
+        border: none;
+        background-color: #00ff22;
+        color: rgb(0, 0, 0);
+        cursor: pointer;
+        border-radius: 5px;
+      }
+      
+      .filter-buttons button:hover {
+        background-color: #0056b3;
+      }
+      
+    </style>
 
     <header class="header">
       <a href="#home" class="logo"> Maulana
@@ -74,111 +95,54 @@
     </section>
 
     <section class="services" id="services">
-      <h2 class="heading">Projek Dan <span>Sertifikat</span></h2>
-
+      <h2 class="heading">Projek, Games Dan <span>Sertifikat</span></h2>
+      <div class="filter-buttons">
+        <button onclick="filterImages('all')">Semua</button>
+        <button onclick="filterImages('Sertifikat')">Sertifikat</button>
+        <button onclick="filterImages('Projek')">Projek</button>
+        <button onclick="filterImages('Game')">Games</button>
+      </div>
       <div class="services-container">
 
-        <div class="service-box">
-          <a href="https://www.sololearn.com/certificates/CC-TQ2PQYBL" target="_blank"><img src="asset/gambar/sertifikathtml.jpg" alt="Service Image" class="service-image"></a>
-          <!-- <div class="service-info">
-            <i class="bx bxs-devices"></i>
-            <h4>Mahasiswa Unpam</h4>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, 
-              unde illo. At, corporis aliquam. Doloremque aliquam sint quidem ex, eum 
-              sapiente cum consequuntur impedit accusamus aperiam. Laboriosam, facere 
-              vero aliquam excepturi fuga animi blanditiis!</p>
-          </div> -->
+        <div class="service-box Sertifikat">
+          <a href="https://www.sololearn.com/certificates/CC-TQ2PQYBL" target="_blank"><img src="asset/gambar/sertifikathtml.jpg" alt="Sertifikat Image" class="service-image"></a>
         </div>
 
-        <div class="service-box">
-          <a href="https://www.sololearn.com/certificates/CC-UFQPIOXH" target="_blank"><img src="asset/gambar/sertifiikatcss.jpg" alt="Service Image" class="service-image"></a>
-          <!-- <div class="service-info">
-            <i class="bx bx-code"></i>
-            <h4>Mahasiswa Unpam</h4>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, 
-              unde illo. At, corporis aliquam. Doloremque aliquam sint quidem ex, eum 
-              sapiente cum consequuntur impedit accusamus aperiam. Laboriosam, facere 
-              vero aliquam excepturi fuga animi blanditiis!</p>
-          </div> -->
+        <div class="service-box Sertifikat">
+          <a href="https://www.sololearn.com/certificates/CC-UFQPIOXH" target="_blank"><img src="asset/gambar/sertifiikatcss.jpg" alt="Sertifikat Image" class="service-image"></a>
+        </div>
+        
+        <div class="service-box Sertifikat">
+          <a href="https://www.sololearn.com/certificates/CC-WWUEJPCI" target="_blank"><img src="asset/gambar/sertifikatjs.jpg" alt="Sertifikat Image" class="service-image"></a>
         </div>
 
-        <div class="service-box">
-          <a href="https://www.sololearn.com/certificates/CC-WWUEJPCI" target="_blank"><img src="asset/gambar/sertifikatjs.jpg" alt="Service Image" class="service-image"></a>
-          <!-- <div class="service-info">
-            <i class="bx bx-code-curly"></i>
-            <h4>Mahasiswa Unpam</h4>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, 
-              unde illo. At, corporis aliquam. Doloremque aliquam sint quidem ex, eum 
-              sapiente cum consequuntur impedit accusamus aperiam. Laboriosam, facere 
-              vero aliquam excepturi fuga animi blanditiis!</p>
-          </div> -->
+         <div class="service-box Sertifikat">
+          <a href="https://www.sololearn.com/certificates/CC-BMCVYKLS" target="_blank"><img src="asset/gambar/sertifikatjsinter.jpg" alt="Sertifikat Image" class="service-image"></a>
         </div>
-         <div class="service-box">
-          <a href="https://www.sololearn.com/certificates/CC-BMCVYKLS" target="_blank"><img src="asset/gambar/sertifikatjsinter.jpg" alt="Service Image" class="service-image"></a>
-          <!-- <div class="service-info">
-            <i class="bx bx-code-curly"></i>
-            <h4>Mahasiswa Unpam</h4>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, 
-              unde illo. At, corporis aliquam. Doloremque aliquam sint quidem ex, eum 
-              sapiente cum consequuntur impedit accusamus aperiam. Laboriosam, facere 
-              vero aliquam excepturi fuga animi blanditiis!</p>
-          </div> -->
-        </div>
-        <div class="service-box">
+
+        <div class="service-box Projek">
           <a href="log.html"><img src="asset/gambar/showlog.png" alt="Service Image" class="service-image"></a>
-          <!-- <div class="service-info">
-            <i class="bx bxs-devices"></i>
-            <h4>Mahasiswa Unpam</h4>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, 
-              unde illo. At, corporis aliquam. Doloremque aliquam sint quidem ex, eum 
-              sapiente cum consequuntur impedit accusamus aperiam. Laboriosam, facere 
-              vero aliquam excepturi fuga animi blanditiis!</p>
-          </div> -->
         </div>
 
-        <div class="service-box">
+        <div class="service-box Projek">
           <a href="dashmin.html"><img src="asset/gambar/showdash.png" alt="Service Image" class="service-image"></a>
-          <!-- <div class="service-info">
-            <i class="bx bx-code"></i>
-            <h4>Mahasiswa Unpam</h4>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, 
-              unde illo. At, corporis aliquam. Doloremque aliquam sint quidem ex, eum 
-              sapiente cum consequuntur impedit accusamus aperiam. Laboriosam, facere 
-              vero aliquam excepturi fuga animi blanditiis!</p>
-          </div> -->
         </div>
-        <div class="service-box">
+
+        <div class="service-box Projek"></div>
+          <a href="sistemkaryawan.html"><img src="asset/gambar/sistemmanajemenkaryawan.png" alt="Service Image" class="service-image"></a>
+        </div>
+      </div>
+
+        <div class="service-box Projek">
           <a href="kalk.html"><img src="asset/gambar/showkalk.png" alt="Service Image" class="service-image"></a>
-          <!-- <div class="service-info">
-            <i class="bx bx-code"></i>
-            <h4>Mahasiswa Unpam</h4>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, 
-              unde illo. At, corporis aliquam. Doloremque aliquam sint quidem ex, eum 
-              sapiente cum consequuntur impedit accusamus aperiam. Laboriosam, facere 
-              vero aliquam excepturi fuga animi blanditiis!</p>
-          </div> -->
         </div>
-         <div class="service-box">
+
+         <div class="service-box Game">
           <a href="gameular.html"><img src="asset/gambar/ularpfp.png" alt="Service Image" class="service-image"></a>
-          <!-- <div class="service-info">
-            <i class="bx bx-code"></i>
-            <h4>Mahasiswa Unpam</h4>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, 
-              unde illo. At, corporis aliquam. Doloremque aliquam sint quidem ex, eum 
-              sapiente cum consequuntur impedit accusamus aperiam. Laboriosam, facere 
-              vero aliquam excepturi fuga animi blanditiis!</p>
-          </div> -->
         </div>
-        <div class="service-box">
+
+        <div class="service-box Projek">
           <a href="chart.html"><img src="asset/gambar/gambarchart.png" alt="Service Image" class="service-image"></a>
-          <!-- <div class="service-info">
-            <i class="bx bx-code"></i>
-            <h4>Mahasiswa Unpam</h4>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, 
-              unde illo. At, corporis aliquam. Doloremque aliquam sint quidem ex, eum 
-              sapiente cum consequuntur impedit accusamus aperiam. Laboriosam, facere 
-              vero aliquam excepturi fuga animi blanditiis!</p>
-          </div> -->
         </div>
       </div>
     </section>
@@ -204,8 +168,12 @@
           <textarea name="" id="" cols="30" rows="10" placeholder="Pesan Anda"></textarea>
           <input type="submit" value="Kirim Pesan" class="btn">
         </div>
-
       </form>
+      <div style="display: grid; justify-content: center; align-content: center;">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.368631321606!2d106.6915326!3d-6.346287900000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69e5a6e26dc3cd%3A0xccd6344b8021119d!2sPamulang%20University%20Campus%202%20(UNPAM%20Viktor)!5e0!3m2!1sen!2sid!4v1736145119025!5m2!1sen!2sid" 
+        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" >
+        </iframe>
+        </div>
     </section>
 
     <footer class="footer">
@@ -246,5 +214,22 @@
     </footer>
 
     <script src="asset/js/script.js"></script>
+    <script>
+      function filterImages(category) {
+        const allImages = document.querySelectorAll('.service-box');
+        
+        allImages.forEach(image => {
+          if (category === 'all' || image.classList.contains(category)) {
+            image.style.display = 'block'; // Tampilkan gambar
+            image.querySelector('img').style.maxWidth = '800px'; // Set ukuran kecil
+            image.querySelector('img').style.height = 'auto'; // Menjaga rasio aspek
+          } else {
+            image.style.display = 'none'; // Sembunyikan gambar
+          }
+        });
+      }
+      
+    </script>
+    
   </body>
 </html>
