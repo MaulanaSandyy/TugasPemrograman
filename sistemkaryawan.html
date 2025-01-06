@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Admin Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <style>
+      .hidden-content { display: none; }
+      .active-link { background-color: rgb(37 99 235); color: white; }
+      .sidebar-link p { color: #fefeff; } 
+    </style>
+  </head>
+
+  <body class="bg-gray-100">
+    <div class="flex">
+      <div class="w-64 bg-white h-screen shadow-md">
+        <div class="p-4 bg-blue-600 text-white">
+          <div class="flex items-center">
+            <img alt="University Logo" style="width: 100px;" src="/asset/gambar/logokaryawanhtml.png"/>
+            <h1>Sistem Informasi Manajemen Karyawan</h1>
+          </div>
+        </div>
+        <div class="p-4">
+          <div class="flex items-center mb-4">
+            <img alt="User Avatar" class="w-10 h-10 rounded-full mr-2" src="/asset/gambar/pfp.png" />
+            <div>
+              <p class="font-semibold">Welcome, Maulana Sandy</p>
+              <p class="text-sm text-gray-600">Administrator</p>
+            </div>
+          </div>
+          <nav>
+            <ul id="sidebar-menu">
+              <li class="mb-2"><a class="sidebar-link flex items-center p-2 hover:bg-gray-200 rounded" href="#" onclick="showContent('dashboard', this)"><i class="fas fa-tachometer-alt mr-2"></i> Dashboard</a></li>
+              <li class="mb-2"><a class="sidebar-link flex items-center p-2 hover:bg-gray-200 rounded" href="#" onclick="showContent('karyawan', this)"><i class="fas fa-users mr-2"></i> Karyawan</a></li>
+              <li class="mb-2"><a class="sidebar-link flex items-center p-2 hover:bg-gray-200 rounded" href="#" onclick="showContent('jabatan', this)"><i class="fas fa-briefcase mr-2"></i> Jabatan</a></li>
+              <li class="mb-2"><a class="sidebar-link flex items-center p-2 hover:bg-gray-200 rounded" href="#" onclick="showContent('divisi', this)"><i class="fas fa-building mr-2"></i> Divisi</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+
+      <div class="flex-1 p-6">
+        <div id="dashboard" class="hidden-content">
+          <div class="bg-blue-600 text-white p-4 rounded shadow-md mb-6">
+            <h1 class="text-2xl font-bold">Sistem Informasi Manajemen Karyawan</h1>
+            <p class="text-lg">Admin Dashboard</p>
+          </div>
+          <div class="grid grid-cols-4 gap-4">
+            <div class="bg-white p-4 rounded shadow-md">
+              <div class="flex items-center mb-2">
+                <i class="fas fa-users fa-2x text-blue-600 mr-2"> </i>
+                <div>
+                  <p class="font-semibold">Data Karyawan</p>
+                  <p class="text-2xl font-bold">13</p>
+                </div>
+              </div>
+            </div>
+            <div class="bg-white p-4 rounded shadow-md">
+              <div class="flex items-center mb-2">
+                <i class="fas fa-calendar-check fa-2x text-green-600 mr-2"> </i>
+                <div>
+                  <p class="font-semibold">Absensi Hari Ini</p>
+                  <p class="text-sm text-gray-600">11 May 2023</p>
+                  <p class="text-2xl font-bold">0</p>
+                </div>
+              </div>
+            </div>
+            <div class="bg-white p-4 rounded shadow-md">
+              <div class="flex items-center mb-2">
+                <i class="fas fa-envelope-open-text fa-2x text-blue-600 mr-2">
+                </i>
+                <div>
+                  <p class="font-semibold">Izin Menunggu Konfirmasi</p>
+                  <p class="text-2xl font-bold">2</p>
+                </div>
+              </div>
+            </div>
+            <div class="bg-white p-4 rounded shadow-md">
+              <div class="flex items-center mb-2">
+                <i class="fas fa-clock fa-2x text-purple-600 mr-2"> </i>
+                <div>
+                  <p class="font-semibold">Lembur Menunggu Konfirmasi</p>
+                  <p class="text-2xl font-bold">1</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div id="karyawan" class="hidden-content">
+          <div class="bg-blue-600 text-white p-4 rounded shadow-md mb-6">
+            <h1 class="text-2xl font-bold">Sistem Informasi Manajemen Karyawan</h1>
+            <p class="text-lg">Karyawan</p>
+          </div>
+          <div class="bg-white p-4 rounded shadow-md">
+            <h2 class="text-xl font-bold mb-4">
+             Data karyawan
+             <button type="button" style="margin-left: 1170px;" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              Tambah Karyawan
+            </button>
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Tambah Karyawan</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <form class="row g-3">
+                      <div class="col-md-6">
+                        <label for="inputEmail4" class="form-label">Nama</label>
+                        <input type="email" class="form-control" id="inputEmail4">
+                      </div>
+                      <div class="col-md-6">
+                        <label for="inputPassword4" class="form-label">Jabatan</label>
+                        <input type="password" class="form-control" id="inputPassword4">
+                      </div>
+                      <div class="col-12">
+                        <label for="inputAddress" class="form-label">Deskripsi</label>
+                        <input type="text" class="form-control" id="inputAddress">
+                      </div>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Keluar</button>
+                    <button type="button" class="btn btn-primary">Simpan</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </h2>
+            
+
+
+            <table class="min-w-full bg-white">
+             <thead>
+              <tr>
+               <th class="py-2 px-4 border-b border-gray-200 bg-gray-100 text-left text-sm font-semibold text-gray-700">
+                No
+               </th>
+               <th class="py-2 px-4 border-b border-gray-200 bg-gray-100 text-left text-sm font-semibold text-gray-700">
+                Nama
+               </th>
+               <th class="py-2 px-4 border-b border-gray-200 bg-gray-100 text-left text-sm font-semibold text-gray-700">
+                Jabatan
+               </th>
+               <th class="py-2 px-4 border-b border-gray-200 bg-gray-100 text-left text-sm font-semibold text-gray-700">
+                Deskripsi
+               </th>
+               <th class="py-2 px-4 border-b border-gray-200 bg-gray-100 text-left text-sm font-semibold text-gray-700">
+                Aksi
+               </th>
+              </tr>
+             </thead>
+             <tbody>
+              <tr>
+               <td class="py-2 px-4 border-b border-gray-200">
+                1
+               </td>
+               <td class="py-2 px-4 border-b border-gray-200">
+                Maulana
+               </td>
+               <td class="py-2 px-4 border-b border-gray-200">
+                Manager
+               </td>
+               <td class="py-2 px-4 border-b border-gray-200">
+                Bertanggung jawab atas pengelolaan tim dan proyek.
+               </td>
+               <td class="py-2 px-4 border-b border-gray-200">
+                <button class="bg-blue-500 text-white px-2 py-1 rounded">
+                 Edit
+                </button>
+                <button class="bg-red-500 text-white px-2 py-1 rounded">
+                 Hapus
+                </button>
+               </td>
+              </tr>
+              <tr>
+               <td class="py-2 px-4 border-b border-gray-200">
+                2
+               </td>
+               <td class="py-2 px-4 border-b border-gray-200">
+                Sandy
+               </td>
+               <td class="py-2 px-4 border-b border-gray-200">
+                Staff
+               </td>
+               <td class="py-2 px-4 border-b border-gray-200">
+                Melaksanakan tugas-tugas administratif dan operasional.
+               </td>
+               <td class="py-2 px-4 border-b border-gray-200">
+                <button class="bg-blue-500 text-white px-2 py-1 rounded">
+                 Edit
+                </button>
+                <button class="bg-red-500 text-white px-2 py-1 rounded">
+                 Hapus
+                </button>
+               </td>
+              </tr>
+              <tr>
+                <td class="py-2 px-4 border-b border-gray-200">
+                 3
+                </td>
+                <td class="py-2 px-4 border-b border-gray-200">
+                 Alkian
+                </td>
+                <td class="py-2 px-4 border-b border-gray-200">
+                 Staff
+                </td>
+                <td class="py-2 px-4 border-b border-gray-200">
+                 Mudah mengenal satu sama lain dan berkerja keras
+                </td>
+                <td class="py-2 px-4 border-b border-gray-200">
+                 <button class="bg-blue-500 text-white px-2 py-1 rounded">
+                  Edit
+                 </button>
+                 <button class="bg-red-500 text-white px-2 py-1 rounded">
+                  Hapus
+                 </button>
+                </td>
+               </tr>
+             </tbody>
+            </table>
+           </div>
+        </div>
+
+
+
+        <div id="jabatan" class="hidden-content">
+          <div class="bg-blue-600 text-white p-4 rounded shadow-md mb-6">
+            <h1 class="text-2xl font-bold">Sistem Informasi Manajemen Karyawan</h1>
+            <p class="text-lg">Jabatan</p>
+          </div>
+          <div class="bg-white p-4 rounded shadow-md">
+            <h2 class="text-xl font-bold mb-4">
+             Data Jabatan
+             <button type="button" style="margin-left: 1010px;" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+              Tambah Jabatan
+            </button>
+            <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Tambah Data Jabatan</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <form class="row g-3">
+                      <div class="col-md-6">
+                        <label for="inputEmail4" class="form-label">Nama</label>
+                        <input type="email" class="form-control" id="inputEmail4">
+                      </div>
+                      <div class="col-md-6">
+                        <label for="inputPassword4" class="form-label">Jabatan</label>
+                        <input type="password" class="form-control" id="inputPassword4">
+                      </div>
+                      <div class="col-12">
+                        <label for="inputAddress" class="form-label">Divisi</label>
+                        <input type="text" class="form-control" id="inputAddress">
+                      </div>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Keluar</button>
+                    <button type="button" class="btn btn-primary">Simpan</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </h2>
+            <table class="min-w-full bg-white">
+             <thead>
+              <tr>
+               <th class="py-2 px-4 border-b border-gray-200 bg-gray-100 text-left text-sm font-semibold text-gray-700">
+                No
+               </th>
+               <th class="py-2 px-4 border-b border-gray-200 bg-gray-100 text-left text-sm font-semibold text-gray-700">
+                Nama
+               </th>
+               <th class="py-2 px-4 border-b border-gray-200 bg-gray-100 text-left text-sm font-semibold text-gray-700">
+                Jabatan
+               </th>
+               <th class="py-2 px-4 border-b border-gray-200 bg-gray-100 text-left text-sm font-semibold text-gray-700">
+                Divisi
+               </th>
+               <th class="py-2 px-4 border-b border-gray-200 bg-gray-100 text-left text-sm font-semibold text-gray-700">
+                Aksi
+               </th>
+              </tr>
+             </thead>
+             <tbody>
+              <tr>
+               <td class="py-2 px-4 border-b border-gray-200">
+                1
+               </td>
+               <td class="py-2 px-4 border-b border-gray-200">
+                Maulana
+               </td>
+               <td class="py-2 px-4 border-b border-gray-200">
+                Manager
+               </td>
+               <td class="py-2 px-4 border-b border-gray-200">
+                Keuangan
+               </td>
+               <td class="py-2 px-4 border-b border-gray-200">
+                <button class="bg-blue-500 text-white px-2 py-1 rounded">
+                 Edit
+                </button>
+                <button class="bg-red-500 text-white px-2 py-1 rounded">
+                 Hapus
+                </button>
+               </td>
+              </tr>
+              <tr>
+               <td class="py-2 px-4 border-b border-gray-200">
+                2
+               </td>
+               <td class="py-2 px-4 border-b border-gray-200">
+                Sandy
+               </td>
+               <td class="py-2 px-4 border-b border-gray-200">
+                Staff
+               </td>
+               <td class="py-2 px-4 border-b border-gray-200">
+                HRD
+               </td>
+               <td class="py-2 px-4 border-b border-gray-200">
+                <button class="bg-blue-500 text-white px-2 py-1 rounded">
+                 Edit
+                </button>
+                <button class="bg-red-500 text-white px-2 py-1 rounded">
+                 Hapus
+                </button>
+               </td>
+              </tr>
+             </tbody>
+            </table>
+           </div>
+        </div>
+
+
+        <div id="divisi" class="hidden-content">
+          <div class="bg-blue-600 text-white p-4 rounded shadow-md mb-6">
+            <h1 class="text-2xl font-bold">Sistem Informasi Manajemen Karyawan</h1>
+            <p class="text-lg">Divisi</p>
+          </div>
+          <div class="bg-white p-4 rounded shadow-md">
+            <h2 class="text-xl font-bold mb-4">
+             Data Divisi
+             <button type="button" style="margin-left: 1080px;" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal3">
+              Tambah Data Divisi
+            </button>
+            <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Tambah Data Divisi</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <form class="row g-3">
+                      <div class="col-md-6">
+                        <label for="inputEmail4" class="form-label">Kode Divisi</label>
+                        <input type="email" class="form-control" id="inputEmail4">
+                      </div>
+                      <div class="col-md-6">
+                        <label for="inputPassword4" class="form-label">Nama Divisi</label>
+                        <input type="password" class="form-control" id="inputPassword4">
+                      </div>
+                      <div class="col-12">
+                        <label for="inputAddress" class="form-label">Jabatan</label>
+                        <input type="text" class="form-control" id="inputAddress">
+                      </div>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Keluar</button>
+                    <button type="button" class="btn btn-primary">Simpan</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </h2>
+            <table class="min-w-full bg-white">
+             <thead>
+              <tr>
+               <th class="py-2 px-4 border-b border-gray-200 bg-gray-100 text-left text-sm font-semibold text-gray-700">
+                No
+               </th>
+               <th class="py-2 px-4 border-b border-gray-200 bg-gray-100 text-left text-sm font-semibold text-gray-700">
+                Kode Divisi
+               </th>
+               <th class="py-2 px-4 border-b border-gray-200 bg-gray-100 text-left text-sm font-semibold text-gray-700">
+                Nama Divisi
+               </th>
+               <th class="py-2 px-4 border-b border-gray-200 bg-gray-100 text-left text-sm font-semibold text-gray-700">
+                Jabatan
+               </th>
+               <th class="py-2 px-4 border-b border-gray-200 bg-gray-100 text-left text-sm font-semibold text-gray-700">
+                Aksi
+               </th>
+              </tr>
+             </thead>
+             <tbody>
+              <tr>
+               <td class="py-2 px-4 border-b border-gray-200">
+                1
+               </td>
+               <td class="py-2 px-4 border-b border-gray-200">
+                DIV001
+               </td>
+               <td class="py-2 px-4 border-b border-gray-200">
+                Cleaning Service
+               </td>
+               <td class="py-2 px-4 border-b border-gray-200">
+                Staff
+               </td>
+               <td class="py-2 px-4 border-b border-gray-200">
+                <button class="bg-blue-500 text-white px-2 py-1 rounded">
+                 Edit
+                </button>
+                <button class="bg-red-500 text-white px-2 py-1 rounded">
+                 Hapus
+                </button>
+               </td>
+              </tr>
+              <tr>
+               <td class="py-2 px-4 border-b border-gray-200">
+                2
+               </td>
+               <td class="py-2 px-4 border-b border-gray-200">
+                DIV002
+               </td>
+               <td class="py-2 px-4 border-b border-gray-200">
+                IT
+               </td>
+               <td class="py-2 px-4 border-b border-gray-200">
+                Staff
+               </td>
+               <td class="py-2 px-4 border-b border-gray-200">
+                <button class="bg-blue-500 text-white px-2 py-1 rounded">
+                 Edit
+                </button>
+                <button class="bg-red-500 text-white px-2 py-1 rounded">
+                 Hapus
+                </button>
+               </td>
+              </tr>
+             </tbody>
+            </table>
+           </div>
+        </div>
+      </div>
+    </div>
+
+
+    
+    <script>
+      function showContent(contentId, linkElement) {
+        // Hide all content sections
+        const sections = document.querySelectorAll('.hidden-content');
+        sections.forEach(section => section.style.display = 'none');
+        document.getElementById(contentId).style.display = 'block';
+
+        // Remove active class from all links
+        const links = document.querySelectorAll('#sidebar-menu a');
+        links.forEach(link => link.classList.remove('active-link'));
+
+        // Add active class to the clicked link
+        linkElement.classList.add('active-link');
+      }
+
+      // Show Dashboard by default
+      showContent('dashboard', document.querySelector('#sidebar-menu a'));
+    </script>
+  </body>
+</html>
